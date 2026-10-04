@@ -15,20 +15,6 @@ The project investigates the impact of network depth, convolution filter sizes, 
 
 ---
 
-## 🏗️ Architecture & Model Design
-
-```mermaid
-flowchart LR
-    In["Input Image<br/>(28x28x1)"] --> C1["Conv2D (3x3, ReLU)"]
-    C1 --> P1["MaxPooling2D (2x2)"]
-    P1 --> C2["Conv2D (3x3, ReLU)"]
-    C2 --> P2["MaxPooling2D (2x2)"]
-    P2 --> Drop["Dropout (0.25 - 0.5)"]
-    Drop --> Flat["Flatten"]
-    Flat --> Dense["Dense (128 units, ReLU)"]
-    Dense --> Out["Softmax Output (10 classes)"]
-```
-
 ### Key Components:
 * **Feature Extraction**: Stacked convolutional layers capturing hierarchical spatial features (low-level edges and corners progressing to stroke geometries).
 * **Dimensionality Reduction**: Non-overlapping max-pooling layers enforcing spatial translation invariance.
